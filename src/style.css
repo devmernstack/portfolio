@@ -36,6 +36,35 @@ body {
   line-height: 1.6;
 }
 
+/* Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dcff7a;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg);
+}
+
 ::selection {
   background: var(--accent);
   color: #000;
