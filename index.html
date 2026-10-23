@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bharat — Full-Stack Developer</title>
+    <meta name="description" content="Bharat — Full-Stack Developer building reliable, scalable and user-friendly web applications." />
+    <meta name="theme-color" content="#060606" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23060606'/><text x='50%' y='58%' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-size='18' font-weight='700' fill='%23c8ff3e'>B.</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <style>html{background:#060606}</style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="loader" aria-hidden="true">
+      <div class="loader__inner">
+        <span class="loader__name">bharat<span class="accent">.</span></span>
+        <span class="loader__count mono">000</span>
+      </div>
+      <div class="loader__bar"><span></span></div>
+    </div>
+
+    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+
+    <!-- Navbar -->
+    <header class="nav">
+      <a href="#home" class="nav__logo" data-link>bharat<span class="accent">.</span></a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about" data-link>About</a>
+        <a href="#services" data-link>What I Do</a>
+        <a href="#stack" data-link>Stack</a>
+        <a href="#projects" data-link>Projects</a>
+        <a href="#approach" data-link>Approach</a>
+        <a href="#experience" data-link>Experience</a>
+      </nav>
+      <a href="#contact" class="btn btn--small nav__cta" data-link>Let's Talk</a>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </header>
+    <div class="menu" aria-hidden="true">
+      <a href="#about" data-link>About</a>
+      <a href="#services" data-link>What I Do</a>
+      <a href="#stack" data-link>Stack</a>
+      <a href="#projects" data-link>Projects</a>
+      <a href="#approach" data-link>Approach</a>
+      <a href="#experience" data-link>Experience</a>
+      <a href="#contact" data-link>Contact</a>
+    </div>
+
+    <div class="progress" aria-hidden="true"><span></span></div>
+
+    <main>
+      <!-- 1. Hero -->
+      <section id="home" class="hero section" data-scene="hero">
+        <div class="container">
+          <p class="hero__badge mono" data-hero>
+            <span class="dot"></span> Available for freelance projects &amp; interesting product ideas
+          </p>
+          <h1 class="hero__title" data-split>Building Scalable Products, One Line of Code at a Time.</h1>
+          <p class="hero__sub" data-hero>
+            Full-Stack Developer focused on building reliable, scalable, and user-friendly web applications that solve real-world problems.
+          </p>
+          <div class="hero__actions" data-hero>
+            <a href="#projects" class="btn btn--primary magnetic" data-link>View My Work <span class="arrow">→</span></a>
+            <a href="#contact" class="btn magnetic" data-link>Let's Connect</a>
+          </div>
+        </div>
+        <div class="hero__intro container" data-hero>
+          <p>
+            I’m a passionate software developer who enjoys turning ideas into production-ready products. I work across frontend, backend, databases, APIs, and third-party integrations to build complete digital experiences.
+          </p>
+          <div class="scroll-hint mono"><span class="scroll-hint__line"></span> Scroll</div>
+        </div>
+      </section>
+
+      <!-- 2. About -->
+      <section id="about" class="section about" data-scene="about">
+        <div class="container about__grid">
+          <div>
+            <p class="eyebrow mono" data-reveal>// 01 — About Me</p>
+            <h2 class="h2" data-reveal>A Developer Who Likes Building Things</h2>
+            <div class="about__text">
+              <p data-reveal>I'm a Full-Stack Developer with a strong focus on building scalable web applications and backend systems.</p>
+              <p data-reveal>I enjoy working on challenging problems where technology, business logic, and user experience come together. From designing APIs and database architectures to integrating third-party services and building clean interfaces, I like being involved in the complete product development journey.</p>
+              <p data-reveal>I believe good software isn't just about writing code — it's about understanding the problem, designing the right solution, and building something that can scale with the business.</p>
+            </div>
+          </div>
+          <div class="code-card" data-reveal>
+            <div class="code-card__bar">
+              <span></span><span></span><span></span>
+              <em class="mono">bharat.ts</em>
+            </div>
+<pre class="mono"><code><span class="k">const</span> <span class="v">bharat</span> = {
+  role: <span class="s">"Full-Stack Developer"</span>,
+  stack: [<span class="s">"Node.js"</span>, <span class="s">"TypeScript"</span>,
+          <span class="s">"React"</span>, <span class="s">"MongoDB"</span>],
+  focus: <span class="s">"scalable products"</span>,
+  loves: [<span class="s">"clean APIs"</span>, <span class="s">"hard bugs"</span>],
+  available: <span class="k">true</span>,
+};
+
+<span class="k">export default</span> <span class="f">ship</span>(bharat);<span class="caret"></span></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. What I Do -->
+      <section id="services" class="section" data-scene="services">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 02 — What I Do</p>
+          <h2 class="h2" data-reveal>End-to-end, from schema to screen.</h2>
+          <div class="services">
+            <article class="service glow-card" data-reveal>
+              <span class="service__num mono">01</span>
+              <h3>Full-Stack Development</h3>
+              <p>Modern, scalable web applications with clean architecture and maintainable code.</p>
+            </article>
+            <article class="service glow-card" data-reveal>
+              <span class="service__num mono">02</span>
+              <h3>Backend &amp; APIs</h3>
+              <p>Robust REST APIs, business logic, authentication, integrations and backend services.</p>
+            </article>
+            <article class="service glow-card" data-reveal>
+              <span class="service__num mono">03</span>
+              <h3>Database Architecture</h3>
+              <p>Designing efficient and scalable database structures using MongoDB and other database technologies.</p>
+            </article>
+            <article class="service glow-card" data-reveal>
+              <span class="service__num mono">04</span>
+              <h3>Third-Party Integrations</h3>
+              <p>Connecting applications with platforms such as Shopify, payment systems, marketing tools, CRM platforms and other APIs.</p>
+            </article>
+            <article class="service service--wide glow-card" data-reveal>
+              <span class="service__num mono">05</span>
+              <h3>SaaS &amp; Product Development</h3>
+              <p>Taking an idea from MVP → Development → Deployment → Scaling.</p>
+              <div class="pipeline mono">
+                <span>MVP</span><i></i><span>Development</span><i></i><span>Deployment</span><i></i><span>Scaling</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Tech Stack -->
+      <section id="stack" class="section stack" data-scene="stack">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 03 — Tech Stack</p>
+          <h2 class="h2" data-reveal>Tools I build with.</h2>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span>React.js</span><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>AWS</span><span>Shopify</span><span>Tailwind CSS</span>
+            <span>React.js</span><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>AWS</span><span>Shopify</span><span>Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="marquee marquee--reverse" aria-hidden="true">
+          <div class="marquee__track">
+            <span>REST APIs</span><span>Mongoose</span><span>Git</span><span>GitHub</span><span>Postman</span><span>Klaviyo</span><span>Postscript</span><span>Payment APIs</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Webhooks</span>
+            <span>REST APIs</span><span>Mongoose</span><span>Git</span><span>GitHub</span><span>Postman</span><span>Klaviyo</span><span>Postscript</span><span>Payment APIs</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Webhooks</span>
+          </div>
+        </div>
+        <div class="container stack__grid">
+          <div class="stack__group" data-reveal>
+            <h3 class="mono">Frontend</h3>
+            <ul><li>React.js</li><li>Next.js</li><li>JavaScript</li><li>TypeScript</li><li>HTML</li><li>CSS</li><li>Tailwind CSS</li></ul>
+          </div>
+          <div class="stack__group" data-reveal>
+            <h3 class="mono">Backend</h3>
+            <ul><li>Node.js</li><li>Express.js</li><li>REST APIs</li></ul>
+          </div>
+          <div class="stack__group" data-reveal>
+            <h3 class="mono">Database</h3>
+            <ul><li>MongoDB</li><li>Mongoose</li><li>PostgreSQL</li></ul>
+          </div>
+          <div class="stack__group" data-reveal>
+            <h3 class="mono">Tools &amp; Platforms</h3>
+            <ul><li>Git</li><li>GitHub</li><li>Docker</li><li>AWS</li><li>Postman</li><li>Redis</li></ul>
+          </div>
+          <div class="stack__group" data-reveal>
+            <h3 class="mono">Integrations</h3>
+            <ul><li>Shopify</li><li>Klaviyo</li><li>Postscript</li><li>Payment APIs</li><li>Third-party REST APIs</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Featured Projects -->
+      <section id="projects" class="section" data-scene="projects">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 04 — Featured Projects</p>
+          <h2 class="h2" data-reveal>Selected work.</h2>
+          <div class="projects">
+            <article class="project">
+              <div class="project__head">
+                <span class="project__num mono">Project 01</span>
+                <h3>Rewards &amp; Loyalty Platform</h3>
+                <span class="project__num mono">Rediem · Shopify App · 3+ years</span>
+              </div>
+              <p class="project__desc">A scalable customer rewards platform designed to manage points, transactions, referrals and reward-based activities. Live on the Shopify App Store — <a href="https://apps.shopify.com/rediem" target="_blank" rel="noopener" class="accent">view app ↗</a></p>
+              <div class="project__body">
+                <div>
+                  <h4 class="mono">What I worked on</h4>
+                  <ul class="chips">
+                    <li>Customer reward transactions</li><li>Points earning &amp; redemption</li><li>Refund handling</li><li>Referral systems</li><li>Transaction idempotency</li><li>MongoDB data modeling</li><li>Shopify integrations</li><li>Third-party integrations</li>
+                  </ul>
+                </div>
+<pre class="project__code mono"><code><span class="c">// idempotent point redemption</span>
+<span class="k">await</span> Ledger.<span class="f">updateOne</span>(
+  { idempotencyKey },
+  { $setOnInsert: { points: -cost } },
+  { upsert: <span class="k">true</span> }
+);</code></pre>
+              </div>
+              <p class="project__tech mono">Node.js · TypeScript · MongoDB · Mongoose · Shopify APIs</p>
+            </article>
+
+            <article class="project">
+              <div class="project__head">
+                <span class="project__num mono">Project 02</span>
+                <h3>WhatsApp Order Manager</h3>
+              </div>
+              <p class="project__desc">A simple order management solution designed for small shopkeepers to manage customer orders directly through WhatsApp.</p>
+              <div class="project__body">
+                <div>
+                  <h4 class="mono">Core features</h4>
+                  <ul class="chips">
+                    <li>WhatsApp-based order collection</li><li>Customer management</li><li>Order tracking</li><li>Product management</li><li>Order status updates</li><li>Automated customer messages</li><li>AI-powered order assistance</li>
+                  </ul>
+                </div>
+                <div class="chat mono" aria-hidden="true">
+                  <p class="chat__in">2 kg rice, 1 oil pls 🙏</p>
+                  <p class="chat__out">✅ Order #1042 confirmed<br />Total: ₹380 · Ready by 6 PM</p>
+                  <p class="chat__in">thanks!</p>
+                </div>
+              </div>
+              <p class="project__tech mono">Node.js · MongoDB · React · WhatsApp API · AI</p>
+            </article>
+
+            <article class="project">
+              <div class="project__head">
+                <span class="project__num mono">Project 03</span>
+                <h3>E-commerce Integration System</h3>
+              </div>
+              <p class="project__desc">Backend services connecting e-commerce platforms with customer, marketing and rewards systems.</p>
+              <div class="project__body">
+                <div>
+                  <h4 class="mono">Key work</h4>
+                  <ul class="chips">
+                    <li>Webhook processing</li><li>Customer synchronization</li><li>Order processing</li><li>Data validation</li><li>API integrations</li><li>Error handling</li><li>Idempotent operations</li>
+                  </ul>
+                </div>
+<pre class="project__code mono"><code><span class="c">// POST /webhooks/orders/create</span>
+<span class="k">if</span> (<span class="k">await</span> seen(event.id)) <span class="k">return</span> ok();
+<span class="k">const</span> order = schema.<span class="f">parse</span>(body);
+<span class="k">await</span> <span class="f">syncCustomer</span>(order.customer);
+<span class="k">await</span> <span class="f">awardPoints</span>(order);</code></pre>
+              </div>
+              <p class="project__tech mono">TypeScript · Node.js · MongoDB · Shopify API · REST APIs</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Development Approach -->
+      <section id="approach" class="section approach" data-scene="approach">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 05 — How I Build</p>
+          <h2 class="h2" data-reveal>My development approach.</h2>
+          <div class="steps">
+            <div class="steps__line"><span></span></div>
+            <div class="step"><span class="step__num mono">01</span><h3>Understand</h3><p>I first understand the business problem and requirements.</p></div>
+            <div class="step"><span class="step__num mono">02</span><h3>Plan</h3><p>I define the architecture, database structure and API flow.</p></div>
+            <div class="step"><span class="step__num mono">03</span><h3>Build</h3><p>I develop clean, maintainable and scalable code.</p></div>
+            <div class="step"><span class="step__num mono">04</span><h3>Test</h3><p>I focus on edge cases, error handling and reliability.</p></div>
+            <div class="step"><span class="step__num mono">05</span><h3>Improve</h3><p>I monitor, optimize and continuously improve the product.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Why Work With Me -->
+      <section id="why" class="section" data-scene="why">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 06 — Why Work With Me?</p>
+          <h2 class="h2" data-reveal>What you get.</h2>
+          <ul class="why">
+            <li data-reveal><span class="mono">01</span><h3>Business First</h3><p>I try to understand the actual problem before deciding the technical solution.</p></li>
+            <li data-reveal><span class="mono">02</span><h3>Clean Architecture</h3><p>I focus on code that is easy to understand, maintain and extend.</p></li>
+            <li data-reveal><span class="mono">03</span><h3>Scalable Solutions</h3><p>I consider future growth while designing APIs, databases and application architecture.</p></li>
+            <li data-reveal><span class="mono">04</span><h3>Problem Solver</h3><p>I enjoy debugging complex issues and finding practical solutions.</p></li>
+            <li data-reveal><span class="mono">05</span><h3>End-to-End Ownership</h3><p>From database design to APIs and integrations, I can work across the complete stack.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 8. Experience -->
+      <section id="experience" class="section" data-scene="experience">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 07 — Experience</p>
+          <h2 class="h2" data-reveal>Where I've been building.</h2>
+          <article class="job glow-card" data-reveal>
+            <div class="job__meta">
+              <h3>Full-Stack Developer</h3>
+              <p class="mono">Company Name · 20XX — Present</p>
+            </div>
+            <p class="job__summary">Working on scalable web applications, backend services, third-party integrations and e-commerce solutions.</p>
+            <h4 class="mono">Key responsibilities</h4>
+            <ul class="job__list">
+              <li>Developed and maintained backend services using Node.js &amp; TypeScript.</li>
+              <li>Designed MongoDB schemas and database operations.</li>
+              <li>Built REST APIs and business logic.</li>
+              <li>Integrated third-party platforms and APIs.</li>
+              <li>Worked on Shopify-based e-commerce workflows.</li>
+              <li>Improved application reliability through validation, error handling and idempotent operations.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- 9. Philosophy -->
+      <section id="philosophy" class="section philosophy" data-scene="philosophy">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 08 — Developer Philosophy</p>
+          <h2 class="philosophy__title" data-split>I don't just write code. <em>I solve problems.</em></h2>
+          <p class="philosophy__text" data-words>Every feature starts with a problem. My job is to understand that problem, simplify it, and turn the solution into reliable software.</p>
+          <p class="philosophy__loop mono" data-reveal>Think <span>→</span> Build <span>→</span> Test <span>→</span> Improve<span>.</span></p>
+        </div>
+      </section>
+
+      <!-- 10. Contact -->
+      <section id="contact" class="section contact" data-scene="contact">
+        <div class="container">
+          <p class="eyebrow mono" data-reveal>// 09 — Contact</p>
+          <h2 class="contact__title" data-split>Have an idea? Let's build it.</h2>
+          <p class="contact__text" data-reveal>Whether you have a product idea, need help with an existing application, or want to discuss a technical challenge, feel free to reach out.</p>
+          <div class="contact__actions" data-reveal>
+            <a href="mailto:bharatbharal20@gmail.com" class="btn btn--primary btn--big magnetic">Let's Talk <span class="arrow">→</span></a>
+            <a href="mailto:bharatbharal20@gmail.com" class="btn btn--big magnetic">Email Me <span class="arrow">→</span></a>
+          </div>
+          <div class="socials mono" data-reveal>
+            <a href="https://github.com/devmernstack" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/bharat-saini-275311209/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="mailto:bharatbharal20@gmail.com">Email ↗</a>
+            <a href="https://github.com/devmernstack" target="_blank" rel="noopener">Projects ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 11. Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <p class="footer__name">Bharat — Full-Stack Developer</p>
+          <p class="footer__tag">Building products. Solving problems. Learning continuously.</p>
+        </div>
+        <div class="footer__links mono">
+          <a href="https://github.com/devmernstack" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/bharat-saini-275311209/" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="mailto:bharatbharal20@gmail.com">Email</a>
+        </div>
+        <p class="footer__copy mono">© 2026 Bharat. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
