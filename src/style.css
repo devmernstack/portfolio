@@ -12,6 +12,10 @@
   --mono: 'JetBrains Mono', ui-monospace, monospace;
   --pad: clamp(16px, 5vw, 64px);
   --radius: 20px;
+  --scrollbar-track: var(--bg);
+  --scrollbar-thumb: var(--line-2);
+  --scrollbar-thumb-hover: var(--accent);
+  color-scheme: dark;
 }
 
 *,
@@ -34,6 +38,32 @@ body {
   background: var(--bg);
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+/* Scrollbar follows the theme tokens above, so a light theme only needs to
+   redefine --bg / --line-2 / --accent (and color-scheme). */
+html {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 2px solid var(--scrollbar-track);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 ::selection {
