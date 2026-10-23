@@ -79,7 +79,8 @@ export function createScene(canvas) {
   const spin = new THREE.Group();
   root.add(spin);
 
-  const pixelRatio = Math.min(window.devicePixelRatio, 2);
+  const touch = window.matchMedia('(pointer: coarse)').matches;
+  const pixelRatio = Math.min(window.devicePixelRatio, touch ? 1.5 : 2);
 
   // ---------- Core: noise-displaced fibonacci sphere of points ----------
   const COUNT = window.innerWidth < 768 ? 7000 : 14000;
@@ -198,9 +199,13 @@ export function createScene(canvas) {
   scene.add(stars);
 
   // ---------- Sizing ----------
+  let lastWidth = 0;
   function resize() {
     const w = window.innerWidth;
-    const h = window.innerHeight;
+    const h = canvas.clientHeight || window.innerHeight;
+    // On phones the address bar changes only the height while scrolling; skip that
+    if (touch && w === lastWidth) return;
+    lastWidth = w;
     renderer.setPixelRatio(pixelRatio);
     renderer.setSize(w, h, false);
     camera.aspect = w / h;

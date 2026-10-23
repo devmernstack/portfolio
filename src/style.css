@@ -100,6 +100,7 @@ ul {
   inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100lvh;
   z-index: 0;
   pointer-events: none;
 }
@@ -1324,8 +1325,15 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  /* Cards are taller than a phone screen, so no sticky stacking here */
   .project {
-    top: 80px;
+    position: relative;
+    top: auto;
+    backdrop-filter: none;
+  }
+
+  .grain {
+    display: none;
   }
 
   .hero__intro {
@@ -1350,6 +1358,13 @@ button:focus-visible {
   }
 
   .hero__badge {
+    font-size: 0.7rem;
+  }
+
+  .code-card pre,
+  .project__code {
+    min-width: 0;
+    padding: 18px 16px;
     font-size: 0.7rem;
   }
 }

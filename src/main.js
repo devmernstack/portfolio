@@ -5,6 +5,8 @@ import 'lenis/dist/lenis.css';
 import { createScene, sceneState } from './scene.js';
 
 gsap.registerPlugin(ScrollTrigger);
+// Mobile address bar show/hide resizes the viewport; don't re-measure on that
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 // Always start at the top: no restored scroll position, no jump to a #hash
 history.scrollRestoration = 'manual';
@@ -217,9 +219,11 @@ function setupScrollAnimations() {
     tracks.forEach((tw) => gsap.to(tw, { timeScale: boost, duration: 0.3, overwrite: true }));
   });
 
-  // Projects: stacked sticky cards that recede as the next one arrives
+  const mm = gsap.matchMedia();
+
+  // Projects: stacked sticky cards that recede as the next one arrives (desktop only)
   const cards = gsap.utils.toArray('.project');
-  cards.forEach((card, i) => {
+  cards.forEach((card) => {
     gsap.from(card, {
       y: 120,
       rotateX: -12,
@@ -228,18 +232,21 @@ function setupScrollAnimations() {
       ease: 'power3.out',
       scrollTrigger: { trigger: card, start: 'top 92%' },
     });
-    const next = cards[i + 1];
-    if (!next) return;
-    gsap.to(card, {
-      scale: 0.9,
-      filter: 'brightness(0.45)',
-      ease: 'none',
-      scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 15%', scrub: true },
+  });
+  mm.add('(min-width: 900px)', () => {
+    cards.forEach((card, i) => {
+      const next = cards[i + 1];
+      if (!next) return;
+      gsap.to(card, {
+        scale: 0.9,
+        filter: 'brightness(0.45)',
+        ease: 'none',
+        scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 15%', scrub: true },
+      });
     });
   });
 
   // Approach: pinned timeline on desktop, simple reveals on mobile
-  const mm = gsap.matchMedia();
   mm.add('(min-width: 900px)', () => {
     const steps = gsap.utils.toArray('.step');
     const tl = gsap.timeline({
